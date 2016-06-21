@@ -5,20 +5,25 @@ server:
 logging:
   level:
     root: INFO
+    sample:
+      mybatis:
+        mapper: TRACE
   config:
     classpath: logging-config.xml
   file: police.log
-    
-   
+  
+  
 
 spring:
   thymeleaf: 
     cache: false
   datasource:
-    url: jdbc:mysql://localhost/acc
+    url: jdbc:mysql://127.0.0.1/acc
     username: root
     password: 
     driver-class-name: com.mysql.jdbc.Driver
+    schema: import.sql
+    initialize: true
     
     
 
