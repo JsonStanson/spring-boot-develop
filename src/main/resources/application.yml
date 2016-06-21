@@ -1,0 +1,25 @@
+server:
+    port: 8000
+
+
+logging:
+  level:
+    root: INFO
+  config:
+    classpath: logging-config.xml
+  file: police.log
+    
+   
+
+spring:
+  thymeleaf: 
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost/acc
+    username: root
+    password: 
+    driver-class-name: com.mysql.jdbc.Driver
+    
+    
+
+    
