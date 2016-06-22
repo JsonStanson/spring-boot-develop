@@ -7,8 +7,7 @@
 		<!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
 		<encoder>
 			<pattern>
-				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line]
-				- %msg%n
+			<![CDATA[[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n]]>
 			</pattern>
 			<charset>UTF8</charset> <!-- 此处设置字符集 -->
 		</encoder>
@@ -37,8 +36,7 @@
 		<!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
 		<encoder>
 			<pattern>
-				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96}
-				[%line]- %msg%n
+				<![CDATA[[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line]- %msg%n]]>
 			</pattern>
 			<charset>UTF8</charset> <!-- 此处设置字符集 -->
 		</encoder>

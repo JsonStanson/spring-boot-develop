@@ -12,6 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.zhili.ApplicationStart;
 import com.zhili.police.mapper.CityMapper;
+import com.zhili.police.mapper.TsAjaxsqlMapper;
+import com.zhili.police.model.TsAjaxsql;
 
 /**
  * @author Eddú Meléndez
@@ -29,6 +31,9 @@ public class SampleMybatisApplicationTest {
 	@Autowired
 	private CityMapper cityMapper;
 
+	@Autowired
+	private TsAjaxsqlMapper tsAjaxsqlMapper;
+
 	@Test
 	public void test() {
 		// City city = new City();
@@ -40,9 +45,15 @@ public class SampleMybatisApplicationTest {
 		// Assert.assertNotNull(doSomthing);
 		// System.out.println(sqlSession.getConnection());
 		// assertNotNull(sqlSession);
-		String output = out.toString();
-	
-		assertTrue("Wrong output: " + output, output.contains("1,San Francisco,CA,US"));
+
+		TsAjaxsql tmp = new TsAjaxsql();
+		tmp.setCode("1111");
+		tsAjaxsqlMapper.insert(tmp);
+
+		// String output = out.toString();
+		//
+		// assertTrue("Wrong output: " + output, output.contains("1,San
+		// Francisco,CA,US"));
 		// assertTrue("Wrong output: " + output, output.contains("1,Conrad
 		// Treasury Place,William & George Streets,4001"));
 	}
