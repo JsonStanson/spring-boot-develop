@@ -7,7 +7,8 @@
 		<!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
 		<encoder>
 			<pattern>
-				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n
+				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line]
+				- %msg%n
 			</pattern>
 			<charset>UTF8</charset> <!-- 此处设置字符集 -->
 		</encoder>
@@ -36,7 +37,8 @@
 		<!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
 		<encoder>
 			<pattern>
-				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line]- %msg%n
+				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96}
+				[%line]- %msg%n
 			</pattern>
 			<charset>UTF8</charset> <!-- 此处设置字符集 -->
 		</encoder>
@@ -53,7 +55,7 @@
 		<appender-ref ref="STDOUT" />
 	</root>
 
-	
+
 	<!-- For loggers in the these namespaces, log at all levels. -->
 	<logger name="com.zhili.police.mapper" level="ALL" />
 	<logger name="com.ibatis" level="DEBUG" />
@@ -64,4 +66,10 @@
 	<logger name="java.sql.Connection" level="DEBUG" />
 	<logger name="java.sql.Statement" level="DEBUG" />
 	<logger name="java.sql.PreparedStatement" level="DEBUG" />
+
+	<logger name="org.thymeleaf" level="DEBUG" />
+	<logger name="org.thymeleaf.TemplateEngine.CONFIG" level="TRACE" />
+	<logger name="org.thymeleaf.TemplateEngine.TIMER" level="TRACE" />
+	<logger name="org.thymeleaf.TemplateEngine.cache.TEMPLATE_CACHE"
+		level="TRACE" />
 </configuration>  
