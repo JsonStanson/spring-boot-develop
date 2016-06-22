@@ -11,10 +11,15 @@ import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.exception.InvalidConfigurationException;
 import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TKMBG {
+	static Logger logger = LoggerFactory.getLogger(TKMBG.class);
+
 	public static void main(String[] args)
 			throws IOException, XMLParserException, InvalidConfigurationException, SQLException, InterruptedException {
+		logger.debug("开始创建");
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		ConfigurationParser cp = new ConfigurationParser(warnings);

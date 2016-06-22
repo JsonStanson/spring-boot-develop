@@ -1,7 +1,5 @@
 package sample.mybatis;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,9 +9,8 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.zhili.ApplicationStart;
-import com.zhili.police.mapper.CityMapper;
-import com.zhili.police.mapper.TsAjaxsqlMapper;
-import com.zhili.police.model.TsAjaxsql;
+import com.zhili.police.mapper.FBjgxxMapper;
+import com.zhili.police.model.FBjgxx;
 
 /**
  * @author Eddú Meléndez
@@ -27,15 +24,15 @@ public class SampleMybatisApplicationTest {
 	@ClassRule
 	public static OutputCapture out = new OutputCapture();
 
-	// private SqlSession sqlSession;
 	@Autowired
-	private CityMapper cityMapper;
+	private FBjgxxMapper fBjgxxMapper;
 
-	@Autowired
-	private TsAjaxsqlMapper tsAjaxsqlMapper;
+	// private SqlSession sqlSession;
 
 	@Test
 	public void test() {
+		FBjgxx tmp = new FBjgxx();
+		System.out.println(fBjgxxMapper.selectCount(tmp));
 		// City city = new City();
 		// city.setCountry("11");
 		// city.setName("11");
@@ -46,9 +43,8 @@ public class SampleMybatisApplicationTest {
 		// System.out.println(sqlSession.getConnection());
 		// assertNotNull(sqlSession);
 
-		TsAjaxsql tmp = new TsAjaxsql();
-		tmp.setCode("1111");
-		tsAjaxsqlMapper.insert(tmp);
+		// TsAjaxsql tmp = new TsAjaxsql();
+		// tmp.setCode("1111");
 
 		// String output = out.toString();
 		//

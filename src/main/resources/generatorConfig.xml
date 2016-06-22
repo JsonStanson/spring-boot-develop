@@ -4,9 +4,11 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	<classPathEntry
-		location="/Users/kousakaikan/Documents/mvn-repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
+	<!-- <classPathEntry location="/Users/kousakaikan/Documents/mvn-repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" 
+		/> -->
 
+	<classPathEntry
+		location="/Users/kousakaikan/Documents/mvn-repository/ojdbc14/ojdbc14/ojdbc14/ojdbc14-ojdbc14.jar" />
 	<context id="Mysql" targetRuntime="MyBatis3Simple"
 		defaultModelType="flat">
 		<!-- <property name="beginningDelimiter" value="`" /> <property name="endingDelimiter" 
@@ -24,9 +26,11 @@
 		</commentGenerator>
 
 
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/acc" userId="root"
-			password="">
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/acc" 
+			userId="root" password=""> </jdbcConnection> -->
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.1.113:1521:XE" userId="GUAN"
+			password="guan2016">
 		</jdbcConnection>
 
 		<javaTypeResolver>
@@ -50,9 +54,9 @@
 		</javaClientGenerator>
 
 
-		<table tableName="TS_AJAXSQL">
+		<table tableName="%" schema="GUAN">
 			<property name="useActualColumnNames" value="false" />
-			<generatedKey column="id" sqlStatement="JDBC" />
+			<!-- <generatedKey column="id" sqlStatement="JDBC" /> -->
 		</table>
 
 	</context>

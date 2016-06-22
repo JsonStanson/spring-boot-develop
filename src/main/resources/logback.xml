@@ -22,7 +22,6 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 
-
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>DEBUG</level>
 		</filter>

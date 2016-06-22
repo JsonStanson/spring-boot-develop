@@ -9,7 +9,7 @@ logging:
 ---  
 
 spring:
-  profiles.active: develop
+  profiles.active: product
 
 ---  
 
@@ -28,6 +28,15 @@ spring:
 ---
 spring:
   profiles: product
+  thymeleaf: 
+    cache: false
+  datasource:
+    url: jdbc:oracle:thin:@192.168.1.113:1521:XE
+    username: GUAN
+    password: guan2016
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    schema: importMysql.sql
+    initialize: false
   
 org: 
   mybatis:
