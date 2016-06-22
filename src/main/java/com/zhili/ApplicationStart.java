@@ -1,4 +1,4 @@
-package com.zhili.police;
+package com.zhili;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.zhili.police.mapper.CityMapper;
 
 @SpringBootApplication
+
 public class ApplicationStart implements CommandLineRunner {
 
 	@Autowired
@@ -19,6 +20,9 @@ public class ApplicationStart implements CommandLineRunner {
 
 	@Override
 	public void run(String... arg0) throws Exception {
+//		City tmp = new City();
+//		tmp.setState("CA");
+		//System.out.println(this.cityMapper.select(tmp));
 		System.out.println(this.cityMapper.findByState("CA"));
 	}
 }

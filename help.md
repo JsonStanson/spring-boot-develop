@@ -12,3 +12,6 @@
 #Join Optimization in Apache Hive
 
 https://www.facebook.com/notes/facebook-engineering/join-optimization-in-apache-hive/470667928919/
+
+
+#Hadoop与Hbase分布式配置 

@@ -23,7 +23,16 @@ spring:
     password: 
     driver-class-name: com.mysql.jdbc.Driver
     schema: import.sql
-    initialize: true
+    initialize: false
+  
+org: 
+  mybatis:
+    spring:
+      SqlSessionTemplate:
+        scope: prototype
+
+mybatis:
+  typeAliasesPackage: abac
     
     
 

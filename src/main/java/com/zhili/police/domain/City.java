@@ -2,16 +2,20 @@ package com.zhili.police.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
 public class City implements Serializable {
-
+	@Transient
 	private static final long serialVersionUID = 1L;
-
+	@Id
 	private Long id;
-
+	@Column
 	private String name;
-
+	@Column
 	private String state;
-
+	@Column
 	private String country;
 
 	public Long getId() {

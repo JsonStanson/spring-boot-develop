@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.zhili.police.domain.City;
 import com.zhili.police.mapper.CityMapper;
 
 @Controller
@@ -17,14 +18,26 @@ public class TableController {
 
 	static Logger logger = LoggerFactory.getLogger(TableController.class);
 
-	@Autowired
-	private CityMapper cityMapper;
+//	@Autowired
+//	private CityMapper cityMapper;
 
 	@RequestMapping(value = "/{reader}", method = RequestMethod.GET)
 	public String get(@PathVariable("reader") String reader, Model model) {
-		cityMapper.findByState("CA");
-		logger.info(reader);
+		// cityMapper.findByState("CA");
+		// logger.info(reader);
 		return "readingList";
+	}
+
+	@RequestMapping(value = "/save", method = RequestMethod.GET)
+	public String save() {
+		// CityMapper mapper = sqlSession.getMapper(CityMapper.class);
+		City tmp = new City();
+		tmp.setCountry("abc");
+		tmp.setName("abc");
+		tmp.setState("abc");
+		//cityMapper.save(tmp);
+		return "readinglist";
+
 	}
 
 }
