@@ -20,9 +20,9 @@ public class ApplicationStart implements CommandLineRunner {
 
 	@Override
 	public void run(String... arg0) throws Exception {
-//		City tmp = new City();
-//		tmp.setState("CA");
-		//System.out.println(this.cityMapper.select(tmp));
+		// City tmp = new City();
+		// tmp.setState("CA");
+		// System.out.println(this.cityMapper.select(tmp));
 		System.out.println(this.cityMapper.findByState("CA"));
 	}
 }

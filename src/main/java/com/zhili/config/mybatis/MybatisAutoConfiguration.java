@@ -1,5 +1,7 @@
 package com.zhili.config.mybatis;
 
+import java.util.Properties;
+
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
@@ -23,6 +25,8 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import com.github.pagehelper.PageHelper;
+
 @Configuration
 @ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
 // @ConditionalOnBean(DataSource.class)
@@ -42,7 +46,6 @@ public class MybatisAutoConfiguration {
 
 	@PostConstruct
 	public void checkConfigFileExists() {
-		log.info("MybatisAutoConfiguration  加入配置");
 		if (this.properties.isCheckConfigLocation()) {
 			Resource resource = this.resourceLoader.getResource(this.properties.getConfig());
 			Assert.state(resource.exists(), "Cannot find config location: " + resource
@@ -74,24 +77,24 @@ public class MybatisAutoConfiguration {
 		return new SqlSessionTemplate(sqlSessionFactory, this.properties.getExecutorType());
 	}
 
-	// /**
-	// * 分页插件
-	// *
-	// * @param dataSource
-	// * @return
-	// * @author SHANHY
-	// * @create 2016年2月18日
-	// */
-	// @Bean
-	// public PageHelper pageHelper(DataSource dataSource) {
-	// log.info("注册MyBatis分页插件PageHelper");
-	// PageHelper pageHelper = new PageHelper();
-	// Properties p = new Properties();
-	// p.setProperty("offsetAsPageNum", "true");
-	// p.setProperty("rowBoundsWithCount", "true");
-	// p.setProperty("reasonable", "true");
-	// pageHelper.setProperties(p);
-	// return pageHelper;
-	// }
+	/**
+	 * 分页插件
+	 *
+	 * @param dataSource
+	 * @return
+	 * @author SHANHY
+	 * @create 2016年2月18日
+	 */
+	@Bean
+	public PageHelper pageHelper(DataSource dataSource) {
+		log.info("注册MyBatis分页插件PageHelper");
+		PageHelper pageHelper = new PageHelper();
+		Properties p = new Properties();
+		p.setProperty("offsetAsPageNum", "true");
+		p.setProperty("rowBoundsWithCount", "true");
+		p.setProperty("reasonable", "true");
+		pageHelper.setProperties(p);
+		return pageHelper;
+	}
 
 }

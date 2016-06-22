@@ -1,20 +1,20 @@
 server:
     port: 8000
-
+---
 
 logging:
-  level:
-    root: INFO
-    sample:
-      mybatis:
-        mapper: TRACE
-  config:
-    classpath: logging-config.xml
-  file: police.log
-  
-  
+   config: 
+     classpath: logback.xml 
+
+---  
 
 spring:
+  profiles.active: develop
+
+---  
+
+spring: 
+  profiles: develop
   thymeleaf: 
     cache: false
   datasource:
@@ -22,8 +22,12 @@ spring:
     username: root
     password: 
     driver-class-name: com.mysql.jdbc.Driver
-    schema: import.sql
+    schema: importMysql.sql
     initialize: false
+    
+---
+spring:
+  profiles: product
   
 org: 
   mybatis:
@@ -31,8 +35,7 @@ org:
       SqlSessionTemplate:
         scope: prototype
 
-mybatis:
-  typeAliasesPackage: abac
+
     
     
 
