@@ -1,4 +1,5 @@
 //TODO 基于多数据源的数据库操作
+//TODO 将项目剥离出来，生成maven的项目给其他构建
 
 
 http://smasue.github.io/spring-yml-datasources yml 编辑多个数据源
